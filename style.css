@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #3d3d3d ;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    transform-style: preserve-3d;
+    gap: 20px;
+    transform: rotateY(30deg) rotateX(10deg);
+}
+
+
+.text {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: all 2.5s ease-in-out;
+    transition-delay: calc(0.25s * var(--j));
+}
+
+.text span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 5em;
+    background: linear-gradient(#434343, #535353);
+    cursor: default;
+    transform: rotateX(calc(90deg * var(--i))) translateZ(75px);
+}
+
+.text::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #373737;
+    transform-origin: left;
+    transform: rotateY(90deg) translateX(-76px);
+}
+
+.text:last-child span {
+    background: linear-gradient(#f2ff00, #f2ff00);
+    
+}
+
+.text:last-child::before {
+    background: #a6af00;
+}
+
+h2 {
+    position: absolute;
+    bottom: 50px;
+    color: #252525;
+    font-size: 2rem;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+h2:after {
+    content: ' 2024';
+    transition: 0.5s;
+}
+
+.active {
+    color: #fff;
+    text-shadow: 0 0 20px #fff,
+        0 0 50px #fff
+}
+
+.active::after {
+    color: #f2ff00;
+    text-shadow: 0 0 20px #f2ff00,
+        0 0 50px #f2ff00;
+}
+
+.newyear div {
+    transform: rotateX(calc(-360deg * 1));
+}
+
+.newyear div:last-child {
+    transform: rotateX(calc(-630deg * 1));
+}
